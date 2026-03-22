@@ -1,0 +1,78 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600&display=swap');
+
+@theme {
+  --font-headline: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --color-background: #141121;
+  --color-surface: #141121;
+  --color-surface-dim: #141121;
+  --color-surface-bright: #3a3749;
+  --color-surface-container: #201d2e;
+  --color-surface-container-low: #1c192a;
+  --color-surface-container-lowest: #0e0c1c;
+  --color-surface-container-high: #2b2839;
+  --color-surface-container-highest: #353344;
+  --color-surface-variant: #353344;
+
+  --color-primary: #ecb2ff;
+  --color-on-primary: #50096c;
+  --color-primary-container: #7d3c98;
+  --color-on-primary-container: #f0beff;
+
+  --color-secondary: #92ccff;
+  --color-on-secondary: #003351;
+  --color-secondary-container: #3398db;
+  --color-on-secondary-container: #002c47;
+
+  --color-tertiary: #c3c0ff;
+  --color-on-tertiary: #1d00a5;
+  --color-tertiary-container: #422ff6;
+  --color-on-tertiary-container: #cdcaff;
+
+  --color-outline: #998d9a;
+  --color-outline-variant: #4e434f;
+  
+  --color-on-surface: #e5dff7;
+  --color-on-surface-variant: #d1c2d1;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface font-body selection:bg-primary/30;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-surface-container/60 backdrop-blur-xl border border-white/10;
+  }
+  
+  .grid-bg {
+    background-image: radial-gradient(circle at 2px 2px, rgba(236, 178, 255, 0.05) 1px, transparent 0);
+    background-size: 40px 40px;
+  }
+  
+  .hero-gradient {
+    background: radial-gradient(circle at 50% 50%, rgba(125, 60, 152, 0.15) 0%, transparent 70%);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+

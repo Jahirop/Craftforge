@@ -1,0 +1,8 @@
+{
+  "name": "Craftforge Studio",
+  "description": "Premium digital agency specializing in UI/UX, full-stack development, and AI-powered creative solutions.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
